@@ -1,0 +1,18 @@
+import type { MenuCategory, MenuItem } from "@/types";
+
+export type Database = {
+  public: {
+    Tables: {
+      menu_categories: {
+        Row: MenuCategory;
+        Insert: Omit<MenuCategory, "id" | "created_at" | "updated_at">;
+        Update: Partial<Omit<MenuCategory, "id" | "created_at">>;
+      };
+      menu_items: {
+        Row: MenuItem;
+        Insert: Omit<MenuItem, "id" | "created_at" | "updated_at" | "category">;
+        Update: Partial<Omit<MenuItem, "id" | "created_at" | "category">>;
+      };
+    };
+  };
+};

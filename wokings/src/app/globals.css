@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #E8490F;
+  --color-primary-dark: #C73D0A;
+  --color-cream: #FFF8F0;
+  --color-cream-dark: #FEF3E8;
+  --color-charcoal: #1A1A1A;
+  --color-soft-dark: #2D2D2D;
+  --color-muted: #6B6B6B;
+  --color-border-light: #E8E8E8;
+  --color-zomato: #EF4444;
+  --color-swiggy: #FC8019;
+  --color-success: #22C55E;
+
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --radius-card: 16px;
+  --radius-modal: 24px;
+  --radius-pill: 9999px;
+
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.07);
+  --shadow-card-hover: 0 8px 32px rgba(232, 73, 15, 0.15);
+  --shadow-modal: 0 24px 64px rgba(0, 0, 0, 0.2);
+  --shadow-navbar: 0 2px 20px rgba(0, 0, 0, 0.08);
+  --shadow-float: 0 8px 24px rgba(232, 73, 15, 0.45);
+}
+
+:root {
+  --primary: #E8490F;
+  --primary-dark: #C73D0A;
+  --cream: #FFF8F0;
+  --charcoal: #1A1A1A;
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--cream);
+  color: #2D2D2D;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar — thin orange */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E8490F;
+  border-radius: 9999px;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(232, 73, 15, 0.20);
+  color: #1A1A1A;
+}
+
+/* ===== HERO ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: rotate(6deg) translateX(60px);
+  }
+  60% {
+    opacity: 1;
+    transform: rotate(6deg) translateX(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(6deg) translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: rotate(6deg) translateY(0);
+  }
+  50% {
+    transform: rotate(6deg) translateY(-8px);
+  }
+}
+
+@keyframes bounceArrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes slideUpIn {
+  from {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 800ms ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fade-in {
+  animation: fadeIn 600ms ease-out forwards;
+  opacity: 0;
+}
+
+.animate-bounce-in {
+  animation: bounceIn 700ms ease-out forwards;
+  opacity: 0;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-bounce-arrow {
+  animation: bounceArrow 1.5s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+.animate-slide-up-in {
+  animation: slideUpIn 400ms ease-out forwards;
+}
+
+/* ===== SHIMMER (skeleton loading) ===== */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.5s linear infinite;
+}
+
+/* ===== SCROLLBAR HIDE (category pills) ===== */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ===== LINE CLAMP ===== */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
