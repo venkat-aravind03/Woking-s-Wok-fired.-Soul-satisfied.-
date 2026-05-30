@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { cn, siteConfig } from "@/lib/utils";
@@ -11,59 +12,7 @@ const navLinks = [
   { label: "Menu", href: "/menu" },
   { label: "About", href: "/about" },
   { label: "Reviews", href: "/reviews" },
-  { label: "Contact", href: "/contact" },
 ];
-
-function WokIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
-      <path
-        d="M12 2C11.5 4 10 5 9 6C8 7 7.5 8 8 9.5C8.5 11 10 12 12 12C14 12 15.5 11 16 9.5C16.5 8 16 7 15 6C14 5 12.5 4 12 2Z"
-        fill="#E8490F"
-        opacity="0.9"
-      />
-      <path
-        d="M7 6C6.5 7.5 6.5 8 7 9C7.5 10 8 10.5 8 10.5"
-        stroke="#E8490F"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        opacity="0.6"
-      />
-      <path
-        d="M17 6C17.5 7.5 17.5 8 17 9C16.5 10 16 10.5 16 10.5"
-        stroke="#E8490F"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        opacity="0.6"
-      />
-      <path
-        d="M4 14C4 14 5 18 8 20C10 21.3 14 21.3 16 20C19 18 20 14 20 14"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M3 14H21"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M20 14L22 13"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -105,22 +54,16 @@ export function Navbar() {
         )}
       >
         <div className="mx-auto flex h-[72px] max-w-[1280px] items-center justify-between px-[80px] lg:h-[72px] max-lg:h-[64px] max-lg:px-6">
-          {/* Logo */}
+          {/* Logo — image from Stitch */}
           <Link href="/" className="flex items-center gap-2">
-            <WokIcon
-              className={cn(
-                "transition-colors duration-300",
-                scrolled ? "text-charcoal" : "text-white"
-              )}
+            <Image
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0kU8gIiR2H6DYi2h_oB5ByhCLVhVXjxrtyR0qmjBT0BZM7M4S1VdygigjsD6n3qcMT9m5HhhnbhjscVBiLVriiEOHlkDUOg9RrQZujnTQBiFrkzz-Q8xQudbCgukeNob1D44zN8WOXh9cEroAzBNZ6dyNtO5NL2kKJeJA3VQSM_T3_M8UOISgYFJtQ3ADAydlkiVi9U37n88rvn7h8-SWQDWlbvtHBwdmYj9_Vhxdzo1piok8JZJpd_w9EJydgmJSTUC8TWJn5l4"
+              alt="Woking's Logo"
+              width={120}
+              height={40}
+              className="h-10 w-auto object-contain"
+              priority
             />
-            <span
-              className={cn(
-                "font-[family-name:var(--font-heading)] text-2xl font-bold transition-colors duration-300 max-lg:text-xl",
-                scrolled ? "text-charcoal" : "text-white"
-              )}
-            >
-              {siteConfig.name}
-            </span>
           </Link>
 
           {/* Desktop Nav Links */}
@@ -154,23 +97,23 @@ export function Navbar() {
             })}
           </div>
 
-          {/* Desktop CTA Buttons */}
+          {/* Desktop CTA Buttons — shorter labels per Stitch */}
           <div className="hidden items-center gap-3 lg:flex">
             <a
               href={siteConfig.orderLinks.zomato}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-10 items-center rounded-lg bg-zomato px-4 font-[family-name:var(--font-body)] text-sm font-bold text-white transition-all duration-200 hover:scale-[1.02] hover:bg-[#DC2626]"
+              className="flex h-10 items-center rounded-lg bg-zomato px-4 font-[family-name:var(--font-body)] text-sm font-bold text-white transition-all duration-200 hover:scale-[1.02] hover:bg-[#DC2626] gap-2"
             >
-              Order on Zomato
+              Zomato
             </a>
             <a
               href={siteConfig.orderLinks.swiggy}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-10 items-center rounded-lg bg-swiggy px-4 font-[family-name:var(--font-body)] text-sm font-bold text-white transition-all duration-200 hover:scale-[1.02] hover:bg-[#EA580C]"
+              className="flex h-10 items-center rounded-lg bg-swiggy px-4 font-[family-name:var(--font-body)] text-sm font-bold text-white transition-all duration-200 hover:scale-[1.02] hover:bg-[#EA580C] gap-2"
             >
-              Order on Swiggy
+              Swiggy
             </a>
           </div>
 
@@ -233,10 +176,13 @@ export function Navbar() {
               className="flex items-center gap-2"
               onClick={closeDrawer}
             >
-              <WokIcon className="text-charcoal" />
-              <span className="font-[family-name:var(--font-heading)] text-xl font-bold text-charcoal">
-                {siteConfig.name}
-              </span>
+              <Image
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0kU8gIiR2H6DYi2h_oB5ByhCLVhVXjxrtyR0qmjBT0BZM7M4S1VdygigjsD6n3qcMT9m5HhhnbhjscVBiLVriiEOHlkDUOg9RrQZujnTQBiFrkzz-Q8xQudbCgukeNob1D44zN8WOXh9cEroAzBNZ6dyNtO5NL2kKJeJA3VQSM_T3_M8UOISgYFJtQ3ADAydlkiVi9U37n88rvn7h8-SWQDWlbvtHBwdmYj9_Vhxdzo1piok8JZJpd_w9EJydgmJSTUC8TWJn5l4"
+                alt="Woking's Logo"
+                width={100}
+                height={36}
+                className="h-9 w-auto object-contain"
+              />
             </Link>
             <button
               onClick={closeDrawer}
@@ -280,7 +226,7 @@ export function Navbar() {
               rel="noopener noreferrer"
               className="mt-4 flex h-12 w-full items-center justify-center rounded-xl bg-zomato font-[family-name:var(--font-body)] text-sm font-bold text-white transition-all duration-200 hover:bg-[#DC2626]"
             >
-              Order on Zomato
+              Zomato
             </a>
             <a
               href={siteConfig.orderLinks.swiggy}
@@ -288,7 +234,7 @@ export function Navbar() {
               rel="noopener noreferrer"
               className="mt-3 flex h-12 w-full items-center justify-center rounded-xl bg-swiggy font-[family-name:var(--font-body)] text-sm font-bold text-white transition-all duration-200 hover:bg-[#EA580C]"
             >
-              Order on Swiggy
+              Swiggy
             </a>
           </div>
         </div>

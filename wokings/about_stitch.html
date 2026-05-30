@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Woking's</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@400..700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffdbd1",
+                        "on-primary-container": "#fffbff",
+                        "inverse-surface": "#313030",
+                        "inverse-primary": "#ffb59f",
+                        "secondary-fixed-dim": "#ffb59f",
+                        "on-background": "#1c1b1b",
+                        "on-primary-fixed": "#3a0a00",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#eae7e7",
+                        "on-primary-fixed-variant": "#862300",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#1e1b17",
+                        "on-tertiary-container": "#fffbff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#ccc6be",
+                        "primary-container": "#d53d00",
+                        "on-secondary-fixed": "#3a0a00",
+                        "tertiary": "#5f5b55",
+                        "outline": "#8f7067",
+                        "surface-container-highest": "#e5e2e1",
+                        "outline-variant": "#e4beb4",
+                        "on-secondary-container": "#5b1500",
+                        "secondary-container": "#fe6432",
+                        "on-primary": "#ffffff",
+                        "background": "#fcf9f8",
+                        "on-tertiary-fixed-variant": "#4a4641",
+                        "surface-variant": "#e5e2e1",
+                        "surface": "#fcf9f8",
+                        "surface-container": "#f0eded",
+                        "tertiary-fixed": "#e8e1da",
+                        "secondary": "#af3100",
+                        "surface-bright": "#fcf9f8",
+                        "on-surface-variant": "#5b4039",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "primary-fixed-dim": "#ffb59f",
+                        "tertiary-container": "#78746e",
+                        "primary": "#aa2f00",
+                        "on-secondary-fixed-variant": "#852300",
+                        "secondary-fixed": "#ffdbd1",
+                        "surface-tint": "#af3100",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "error": "#ba1a1a",
+                        "on-surface": "#1c1b1b",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "base": "8px",
+                        "xl": "80px",
+                        "sm": "12px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-caps": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "42px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md shadow-sm fixed top-0 w-full z-50 transition-all duration-300">
+<div class="flex justify-between items-center px-gutter py-4 max-w-[1200px] mx-auto">
+<a class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed-dim hover:scale-95 transition-transform" href="/">Woking's</a>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-on-surface dark:text-on-surface-variant font-body-md hover:text-primary transition-colors" href="#">Menu</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">About</a>
+<a class="text-on-surface dark:text-on-surface-variant font-body-md hover:text-primary transition-colors" href="#">Locations</a>
+<a class="text-on-surface dark:text-on-surface-variant font-body-md hover:text-primary transition-colors" href="#">Reviews</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-lg font-body-md font-bold hover:bg-primary-container transition-colors shadow-sm hover:shadow-md">
+                    Order Now
+                </button>
+<button aria-label="shopping_cart" class="text-on-surface hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Page Hero -->
+<section class="relative h-[320px] mt-[72px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-black z-0">
+<div class="absolute inset-0 bg-cover bg-center opacity-40" data-alt="A warm, atmospheric shot of a busy street food kitchen at night. A chef is tossing food in a large wok, flames leaping up, illuminating their face and the surrounding ingredients. The scene is shot with high-end, cinematic lighting, emphasizing the vibrant orange flames against the deep charcoal background. The overall mood is energetic, authentic, and evocative of premium street culinary experiences." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFWhjojSrzuLJA2bqC5jL4u44yB5t7vrQ44U2pwQl2rEjT6nI74PMP0a0jLBUbRogQ-zVoumuFkT0cwLwT0NDcvJVGs2BjeNL8NY7HycjRQdzuGX1DNmq0oSPkgFGcJ4t8DoK0VENbKOuBPniSaBkCLx6m6t2CxYEjygGxgwNucV7T-yYE4kFLkJLw5ldNcPvH9vsDoGuwN77uVaHTCQOgGe-GOQLOv905lgeS306tnfphb2Q9NRkAizFhJoaj1vT0vthrY3MJy3k');"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop text-on-primary">
+<p class="font-label-caps text-label-caps text-primary-container tracking-widest mb-2 uppercase">WHO WE ARE</p>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-4">Our Story</h1>
+<p class="font-body-lg text-body-lg italic opacity-85 mb-6 max-w-2xl mx-auto">Three chefs. One wok. Countless happy stomachs.</p>
+<div class="flex items-center justify-center gap-2 font-label-sm text-label-sm opacity-70">
+<a class="hover:text-primary transition-colors" href="/">Home</a>
+<span>→</span>
+<span>About</span>
+</div>
+</div>
+</section><section class="bg-surface-container-low py-xl px-margin-mobile md:px-margin-desktop">
+<div class="max-w-[1200px] mx-auto text-center">
+<p class="font-label-caps text-label-caps text-primary tracking-widest mb-2 uppercase">OWNERS SHORT STORY</p>
+<h2 class="font-headline-lg text-headline-lg text-on-background">The Man Behind Woking</h2>
+</div>
+</section>
+<!-- Our Story -->
+<section class="bg-surface-container-low py-xl px-margin-mobile md:px-margin-desktop">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-xl items-center">
+<div class="w-full md:w-[55%]">
+<div class="w-12 h-[3px] bg-primary mb-6"></div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-6">From a Small Wok to a <span class="text-primary">Big Heart</span></h2>
+<div class="font-body-md text-body-md text-on-surface-variant space-y-4 mb-8">
+<p>It started as a humble idea at the Destination Food Court beside HDFC Bank in Kondapur. Three friends, a shared passion for bold flavors, and a single wok. We didn't have much, but we had a commitment to doing things right.</p>
+<p>Every morning, we hand-select our ingredients, ensuring only the freshest produce and highest-quality proteins make it into our dishes. We believe that street food doesn't have to mean compromising on quality; it should be a visceral, authentic experience that warms the soul.</p>
+</div>
+<div class="flex flex-wrap gap-4">
+<div class="bg-surface px-4 py-2 rounded-lg border-l-4 border-primary font-label-sm text-label-sm text-on-surface-variant flex items-center gap-2 shadow-sm">
+<span>🗓️</span> Est. 2023
+                    </div>
+<div class="bg-surface px-4 py-2 rounded-lg border-l-4 border-primary font-label-sm text-label-sm text-on-surface-variant flex items-center gap-2 shadow-sm">
+<span>📍</span> Kondapur, Hyderabad
+                    </div>
+<div class="bg-surface px-4 py-2 rounded-lg border-l-4 border-primary font-label-sm text-label-sm text-on-surface-variant flex items-center gap-2 shadow-sm">
+<span>👨‍🍳</span> 3 Chefs
+                    </div>
+</div>
+</div>
+<div class="w-full md:w-[45%] relative">
+<div class="absolute -bottom-2 -right-2 w-full h-full border-b-[4px] border-r-[4px] border-primary rounded-3xl z-0"></div>
+<div class="relative h-[480px] w-full rounded-3xl overflow-hidden z-10 shadow-sm hover:shadow-[0_8px_30px_rgb(232,73,15,0.1)] transition-shadow duration-300">
+<img alt="Chefs working" class="w-full h-full object-cover" data-alt="A candid, warm-toned portrait of three chefs smiling together in a bustling kitchen. The lighting is soft but emphasizes the orange and red tones of the cooking environment. The chefs are wearing clean aprons, radiating passion and camaraderie. The image conveys an artisanal, high-quality street food vibe, consistent with a modern, premium brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdLy9iOE4snRrZJ9fZwpsK3OT6DDgdvEupycLF41J4ThvQxUgjmb5E9FTLvh93Bocv3JedZ0pE0anwR_-Ixgw3gj3gjp7L9kbt3JuagFLBN3em3W9NK7ZJBbYR5O71vfOzq6oMl1AhFsZqG-rjEF8UW-t3MXFANQW_N_wE95qPw57i7Z0p23UqWZenkwSMUynBwBtxJrykhitCLIT4wpuiaWGC2cIoJJ3q_BmUMtulyBas9wJ11NbuZK5XBBao49T6pd-UaslkBLY"/>
+<div class="absolute top-4 right-4 bg-primary text-on-primary px-4 py-1.5 rounded-full font-label-caps text-label-caps font-bold shadow-md">
+                        ⭐ 4.8 Rated
+                    </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Values -->
+<section class="bg-inverse-surface py-xl px-margin-mobile md:px-margin-desktop text-on-primary">
+<div class="max-w-[1200px] mx-auto">
+<div class="text-center mb-12">
+<p class="font-label-caps text-label-caps text-inverse-primary tracking-widest mb-2 uppercase">WHAT WE STAND FOR</p>
+<h2 class="font-headline-lg text-headline-lg">Our Values</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="glassmorphism p-6 rounded-2xl border-l-4 border-l-primary hover:translate-y-[-4px] transition-transform duration-300">
+<div class="text-3xl mb-4">🔥</div>
+<h3 class="font-headline-md text-headline-md mb-2">Wok-Fresh Always</h3>
+<p class="font-body-md text-body-md opacity-80">We don't do pre-cooked. Every meal is tossed on high heat the moment you order, ensuring maximum flavor and that signature wok hei.</p>
+</div>
+<div class="glassmorphism p-6 rounded-2xl border-l-4 border-l-primary hover:translate-y-[-4px] transition-transform duration-300">
+<div class="text-3xl mb-4">❤️</div>
+<h3 class="font-headline-md text-headline-md mb-2">Made With Love</h3>
+<p class="font-body-md text-body-md opacity-80">Cooking is our love language. We pour our hearts into every recipe, treating every customer like family dining at our table.</p>
+</div>
+<div class="glassmorphism p-6 rounded-2xl border-l-4 border-l-primary hover:translate-y-[-4px] transition-transform duration-300">
+<div class="text-3xl mb-4">💰</div>
+<h3 class="font-headline-md text-headline-md mb-2">Pocket Friendly</h3>
+<p class="font-body-md text-body-md opacity-80">Premium quality shouldn't be a luxury. We strive to offer soul-satisfying meals that are accessible to everyone without breaking the bank.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest w-full border-t-4 border-primary">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter py-lg max-w-[1200px] mx-auto">
+<div class="font-headline-md text-headline-md text-primary mb-4 md:mb-0">
+                Woking's
+            </div>
+<div class="text-on-tertiary-fixed-variant dark:text-on-surface-variant font-body-md text-center md:text-left mb-4 md:mb-0">
+                © 2024 Woking's Street Food. All rights reserved.
+            </div>
+<div class="flex gap-6 font-label-caps text-label-caps text-on-tertiary-fixed-variant dark:text-on-surface-variant">
+<a class="hover:text-primary-fixed-dim transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary-fixed-dim transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary-fixed-dim transition-colors" href="#">Contact Us</a>
+<a class="hover:text-primary-fixed-dim transition-colors" href="#">Careers</a>
+</div>
+</div>
+</footer>
+</body></html>

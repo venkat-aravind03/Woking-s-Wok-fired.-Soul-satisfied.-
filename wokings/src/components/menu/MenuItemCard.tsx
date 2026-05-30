@@ -8,7 +8,7 @@ export function MenuItemCard({ item, className }: MenuItemCardProps) {
   return (
     <article
       className={cn(
-        "bg-white rounded-xl shadow-sm overflow-hidden flex flex-col group transition-shadow duration-300",
+        "bg-white rounded-xl shadow-sm overflow-hidden flex flex-col group transition-shadow duration-300 border border-border-light",
         item.is_available
           ? "hover:shadow-[0_8px_32px_rgba(232,73,15,0.15)] hover:-translate-y-1"
           : "opacity-75 grayscale-[0.3]",
@@ -18,17 +18,21 @@ export function MenuItemCard({ item, className }: MenuItemCardProps) {
       {/* Image Area */}
       <div className="relative h-[220px] overflow-hidden">
         {item.image_url ? (
-          <Image
-            src={item.image_url}
-            alt={`${item.name} at Woking's Kondapur`}
-            fill
-            className={cn(
-              "object-cover",
-              item.is_available &&
-                "group-hover:scale-105 transition-transform duration-500"
-            )}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
+          <>
+            {/* Dark overlay that fades on hover */}
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors z-[1]" />
+            <Image
+              src={item.image_url}
+              alt={`${item.name} at Woking's Kondapur`}
+              fill
+              className={cn(
+                "object-cover",
+                item.is_available &&
+                  "group-hover:scale-105 transition-transform duration-500"
+              )}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </>
         ) : (
           <div className="flex h-full w-full flex-col items-center justify-center bg-gradient-to-br from-cream-dark to-cream">
             <span className="text-5xl">🍜</span>
@@ -47,33 +51,16 @@ export function MenuItemCard({ item, className }: MenuItemCardProps) {
           </div>
         )}
 
-        {/* Veg / Non-Veg Indicator */}
-        <div className="absolute top-3 left-3">
-          <div
-            className={cn(
-              "bg-white p-1 rounded border",
-              item.is_vegetarian ? "border-success" : "border-zomato"
-            )}
-          >
-            <div
-              className={cn(
-                "w-2 h-2 rounded-full",
-                item.is_vegetarian ? "bg-success" : "bg-zomato"
-              )}
-            />
-          </div>
-        </div>
-
-        {/* Bestseller Badge */}
+        {/* Bestseller Badge — yellow pill (Stitch style) */}
         {item.is_bestseller && (
-          <div className="absolute top-3 right-3 bg-primary text-white font-[family-name:var(--font-body)] text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm">
+          <div className="absolute top-3 right-3 z-10 bg-yellow-400 text-charcoal font-[family-name:var(--font-body)] text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-md flex items-center gap-1">
             🔥 Bestseller
           </div>
         )}
 
-        {/* Spicy Indicator */}
-        {item.is_spicy && (
-          <div className="absolute bottom-2.5 right-2.5 bg-zomato/15 border border-zomato/30 text-zomato px-2 py-0.5 rounded-full font-[family-name:var(--font-body)] text-[11px] font-medium">
+        {/* Spicy Badge — red pill (Stitch style) */}
+        {item.is_spicy && !item.is_bestseller && (
+          <div className="absolute top-3 right-3 z-10 bg-red-100 text-red-800 border border-red-200 font-[family-name:var(--font-body)] text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-md flex items-center gap-1">
             🌶️ Spicy
           </div>
         )}
@@ -81,31 +68,45 @@ export function MenuItemCard({ item, className }: MenuItemCardProps) {
 
       {/* Content Area */}
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="font-[family-name:var(--font-body)] text-[17px] font-semibold text-charcoal mb-1 leading-tight">
-          {item.name}
-        </h3>
-        <p className="font-[family-name:var(--font-body)] text-sm text-muted leading-relaxed mb-6 line-clamp-2">
+        {/* Title + Veg/Non-veg indicator (Stitch: side by side) */}
+        <div className="flex justify-between items-start mb-2">
+          <h3 className="font-[family-name:var(--font-body)] text-[17px] font-semibold text-charcoal leading-tight pr-4">
+            {item.name}
+          </h3>
+          <div
+            className={cn(
+              "w-5 h-5 border rounded-sm flex items-center justify-center flex-shrink-0 mt-0.5",
+              item.is_vegetarian ? "border-success" : "border-zomato"
+            )}
+          >
+            <div
+              className={cn(
+                "w-2.5 h-2.5 rounded-full",
+                item.is_vegetarian ? "bg-success" : "bg-zomato"
+              )}
+            />
+          </div>
+        </div>
+
+        <p className="font-[family-name:var(--font-body)] text-sm text-muted leading-relaxed mb-6 line-clamp-2 flex-grow">
           {item.description}
         </p>
 
-        <hr className="border-border-light mb-6" />
-
-        <div className="flex justify-between items-center mt-auto">
+        <div className="flex justify-between items-center mt-auto pt-4 border-t border-border-light">
           {/* Price */}
-          <div className="font-[family-name:var(--font-heading)] text-2xl font-semibold text-charcoal">
-            <span className="text-primary text-lg mr-1">₹</span>
-            {Math.round(item.price)}
+          <div className="font-[family-name:var(--font-body)] text-lg font-bold text-charcoal">
+            ₹ {Math.round(item.price)}
           </div>
 
-          {/* Order Button */}
+          {/* Order Button — ghost style per Stitch */}
           {item.is_available ? (
             <a
               href={siteConfig.orderLinks.zomato}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-primary text-white font-[family-name:var(--font-body)] text-sm font-bold px-6 py-2.5 rounded-full hover:bg-primary-dark transition-colors"
+              className="bg-[#f0eded] hover:bg-primary hover:text-white text-primary font-[family-name:var(--font-body)] text-sm font-bold px-4 py-2 rounded-lg transition-colors border border-primary/30 hover:border-primary"
             >
-              Order Now →
+              + Add
             </a>
           ) : (
             <button

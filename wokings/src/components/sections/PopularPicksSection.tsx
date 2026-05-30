@@ -20,6 +20,9 @@ export default async function PopularPicksSection() {
           <h2 className="font-[family-name:var(--font-heading)] text-4xl md:text-5xl font-bold text-charcoal">
             Popular Picks
           </h2>
+          <p className="font-[family-name:var(--font-body)] text-lg text-muted mt-4 max-w-2xl mx-auto">
+            Our most loved dishes, prepared fresh to order with intense wok hei.
+          </p>
         </div>
 
         {/* Items Grid */}
@@ -29,11 +32,11 @@ export default async function PopularPicksSection() {
           ))}
         </div>
 
-        {/* View Full Menu CTA */}
+        {/* View Full Menu CTA — text link style per Stitch */}
         <div className="text-center mt-12">
           <Link
             href="/menu"
-            className="inline-flex items-center gap-2 bg-primary text-white font-[family-name:var(--font-body)] text-sm font-bold uppercase tracking-wide px-8 py-4 rounded-full hover:bg-primary-dark transition-colors shadow-[0_4px_16px_rgba(232,73,15,0.30)]"
+            className="inline-flex items-center gap-2 text-primary font-[family-name:var(--font-body)] text-sm font-bold uppercase tracking-wide hover:text-primary-dark transition-colors pb-1 border-b-2 border-primary/30 hover:border-primary"
           >
             View Full Menu →
           </Link>

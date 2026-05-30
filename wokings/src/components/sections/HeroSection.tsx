@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, Star, StarHalf } from "lucide-react";
+import { ChevronDown, Star, StarHalf, MapPin } from "lucide-react";
 import { siteConfig } from "@/lib/utils";
 
 export default function HeroSection() {
@@ -25,12 +25,12 @@ export default function HeroSection() {
         sizes="100vw"
       />
 
-      {/* Dark Overlay */}
+      {/* Dark Overlay — gradient from bottom */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(26,26,26,0.80) 0%, rgba(26,26,26,0.60) 50%, rgba(26,26,26,0.75) 100%)",
+            "linear-gradient(to top, rgba(26,26,26,0.90) 0%, rgba(26,26,26,0.60) 50%, rgba(26,26,26,0.30) 100%)",
         }}
       />
 
@@ -48,32 +48,42 @@ export default function HeroSection() {
             </span>
           </div>
 
-          {/* Main Headline */}
+          {/* Main Headline — "Woking" per Stitch */}
           <h1
-            className={`mt-4 font-[family-name:var(--font-heading)] text-[104px] font-bold leading-none text-white max-lg:text-[72px] max-md:text-[52px] ${mounted ? "animate-fade-in-up" : "opacity-0"}`}
+            className={`mt-4 font-[family-name:var(--font-heading)] text-[96px] font-bold leading-none text-white max-lg:text-[64px] max-md:text-[48px] ${mounted ? "animate-fade-in-up" : "opacity-0"}`}
             style={{
-              textShadow: "0 4px 32px rgba(0,0,0,0.40)",
+              textShadow: "2px 2px 4px rgba(0,0,0,0.7)",
               animationDelay: "600ms",
             }}
           >
-            {siteConfig.name}
+            Woking
           </h1>
 
-          {/* Subheadline */}
+          {/* Subheadline — per Stitch */}
           <p
-            className={`mt-2 font-[family-name:var(--font-heading)] text-[28px] italic text-white/90 max-md:text-[22px] ${mounted ? "animate-fade-in-up" : "opacity-0"}`}
+            className={`mt-2 font-[family-name:var(--font-heading)] text-[24px] md:text-[32px] italic text-white/90 ${mounted ? "animate-fade-in-up" : "opacity-0"}`}
             style={{ animationDelay: "800ms" }}
           >
-            {siteConfig.tagline} 🔥
+            Exciting, Appetizing, Lip-smacking!!!
           </p>
 
-          {/* Location */}
+          {/* Locations — pill style mapped from siteConfig */}
           <div
-            className={`flex items-center gap-2 text-white/80 font-[family-name:var(--font-body)] text-[15px] mb-10 bg-black/30 px-6 py-2 rounded-full backdrop-blur-md mt-6 ${mounted ? "animate-fade-in" : "opacity-0"}`}
+            className={`flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 text-white/80 font-[family-name:var(--font-body)] text-base md:text-[15px] mb-10 mt-8 ${mounted ? "animate-fade-in" : "opacity-0"}`}
             style={{ animationDelay: "900ms" }}
           >
-            <span className="text-primary text-xl leading-none">📍</span>
-            <span>{siteConfig.location.street}</span>
+            {siteConfig.location.branches?.map((branch) => (
+              <a
+                key={branch.id}
+                href={branch.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-black/30 px-5 py-2.5 rounded-full backdrop-blur-md hover:bg-black/50 hover:text-white transition-colors"
+              >
+                <MapPin className="w-5 h-5 text-primary shrink-0" />
+                <span>{branch.label}</span>
+              </a>
+            ))}
           </div>
 
           {/* CTA Buttons */}

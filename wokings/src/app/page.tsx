@@ -1,6 +1,8 @@
 import HeroSection from "@/components/sections/HeroSection";
 import StatsBar from "@/components/sections/StatsBar";
 import PopularPicksSection from "@/components/sections/PopularPicksSection";
+import AboutTeaserSection from "@/components/sections/AboutTeaserSection";
+import ReviewsTeaserSection from "@/components/sections/ReviewsTeaserSection";
 
 export default function HomePage() {
   return (
@@ -8,11 +10,11 @@ export default function HomePage() {
       <HeroSection />
       <StatsBar />
       <PopularPicksSection />
+      <AboutTeaserSection />
+      <ReviewsTeaserSection />
 
       {/*
-        PHASE 3 PLACEHOLDER — do not build yet:
-        <AboutTeaserSection />    ← Phase 3
-        <ReviewsTeaserSection />  ← Phase 3
+        PHASE 4 PLACEHOLDER — do not build yet:
         <OrderCTABanner />        ← Phase 4
       */}
     </>

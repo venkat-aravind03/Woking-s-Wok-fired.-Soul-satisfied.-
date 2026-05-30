@@ -1,0 +1,366 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Customer Reviews - Woking's</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#ccc6be",
+                      "on-secondary-fixed-variant": "#852300",
+                      "outline": "#8f7067",
+                      "on-tertiary-container": "#fffbff",
+                      "tertiary-fixed": "#e8e1da",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container": "#f0eded",
+                      "on-secondary-container": "#5b1500",
+                      "on-primary-fixed-variant": "#862300",
+                      "secondary-container": "#fe6432",
+                      "on-primary-container": "#fffbff",
+                      "on-surface": "#1c1b1b",
+                      "surface-tint": "#af3100",
+                      "secondary-fixed-dim": "#ffb59f",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#78746e",
+                      "surface-variant": "#e5e2e1",
+                      "surface-container-low": "#f6f3f2",
+                      "primary-container": "#d53d00",
+                      "error-container": "#ffdad6",
+                      "surface-container-high": "#eae7e7",
+                      "secondary": "#af3100",
+                      "on-background": "#1c1b1b",
+                      "error": "#ba1a1a",
+                      "secondary-fixed": "#ffdbd1",
+                      "tertiary": "#5f5b55",
+                      "inverse-primary": "#ffb59f",
+                      "primary": "#aa2f00",
+                      "outline-variant": "#e4beb4",
+                      "surface-bright": "#fcf9f8",
+                      "on-surface-variant": "#5b4039",
+                      "inverse-surface": "#313030",
+                      "primary-fixed-dim": "#ffb59f",
+                      "inverse-on-surface": "#f3f0ef",
+                      "on-primary-fixed": "#3a0a00",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed": "#1e1b17",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed": "#ffdbd1",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#4a4641",
+                      "on-secondary-fixed": "#3a0a00",
+                      "surface-dim": "#dcd9d9",
+                      "surface": "#fcf9f8",
+                      "background": "#fcf9f8",
+                      "surface-container-highest": "#e5e2e1",
+                      "on-primary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "64px",
+                      "base": "8px",
+                      "lg": "48px",
+                      "md": "24px",
+                      "gutter": "24px",
+                      "xl": "80px",
+                      "sm": "12px",
+                      "xs": "4px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "42px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); }
+        .masonry-grid { column-count: 1; column-gap: theme('spacing.md'); }
+        @media (min-width: 768px) { .masonry-grid { column-count: 2; } }
+        @media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
+        .masonry-item { break-inside: avoid; margin-bottom: theme('spacing.md'); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(170, 47, 0, 0.1); }
+    </style>
+</head>
+<body class="font-body-md text-body-md text-on-surface antialiased pt-20">
+<!-- TopNavBar Component -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md shadow-sm">
+<div class="max-w-[1200px] mx-auto flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20">
+<div class="font-display-lg text-display-lg text-primary dark:text-secondary-fixed-dim">
+                Woking's
+            </div>
+<div class="hidden md:flex space-x-lg">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors hover:text-primary dark:hover:text-secondary-fixed transition-all duration-300" href="#">Home</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors hover:text-primary dark:hover:text-secondary-fixed transition-all duration-300" href="#">Menu</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors hover:text-primary dark:hover:text-secondary-fixed transition-all duration-300" href="#">About</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 active:scale-95 transition-transform duration-200" href="#">Reviews</a>
+</div>
+<button class="bg-primary text-on-primary font-body-md text-body-md px-md py-sm rounded-lg active:scale-95 transition-transform duration-200 hover:bg-secondary transition-colors">
+                Order Now
+            </button>
+</div>
+</nav>
+<!-- Hero + Rating Summary Section -->
+<section class="bg-inverse-surface py-xl">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-lg items-center">
+<div class="space-y-md">
+<h1 class="font-display-lg text-display-lg text-inverse-on-surface">What People Are Saying</h1>
+<p class="font-body-lg text-body-lg text-inverse-on-surface/80 max-w-xl">
+                    Our wok-fired creations spark joy. Read authentic stories from our community of flavor seekers and see why Woking's is a local favorite.
+                </p>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-lg shadow-sm flex flex-col md:flex-row gap-lg items-center justify-between">
+<div class="text-center md:text-left">
+<div class="font-display-lg text-display-lg text-primary mb-xs">4.8</div>
+<div class="flex text-primary mb-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Based on 1,245 reviews</p>
+</div>
+<div class="w-full md:w-64 space-y-sm">
+<div class="flex items-center gap-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-4">5</span>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-4">4</span>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 10%"></div>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-4">3</span>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 3%"></div>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-4">2</span>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 1%"></div>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-4">1</span>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 1%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sticky Filter Bar -->
+<section class="sticky top-20 z-40 bg-surface-container-lowest border-b border-surface-variant shadow-sm py-sm">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop flex flex-col sm:flex-row justify-between items-center gap-md">
+<div class="flex gap-sm overflow-x-auto w-full pb-2 sm:pb-0 hide-scrollbar">
+<button class="px-md py-xs rounded-full bg-primary text-on-primary font-label-caps text-label-caps whitespace-nowrap">All Reviews</button>
+<button class="px-md py-xs rounded-full bg-surface-container hover:bg-surface-variant text-on-surface font-label-caps text-label-caps whitespace-nowrap transition-colors">Zomato</button>
+<button class="px-md py-xs rounded-full bg-surface-container hover:bg-surface-variant text-on-surface font-label-caps text-label-caps whitespace-nowrap transition-colors">Swiggy</button>
+<button class="px-md py-xs rounded-full bg-surface-container hover:bg-surface-variant text-on-surface font-label-caps text-label-caps whitespace-nowrap transition-colors">Google</button>
+<button class="px-md py-xs rounded-full bg-surface-container hover:bg-surface-variant text-on-surface font-label-caps text-label-caps whitespace-nowrap transition-colors">Direct</button>
+</div>
+<div class="flex items-center gap-sm w-full sm:w-auto shrink-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sort by:</span>
+<select class="bg-surface-container-lowest border border-outline rounded-lg px-sm py-xs text-body-md font-body-md focus:ring-primary focus:border-primary">
+<option>Newest First</option>
+<option>Highest Rated</option>
+<option>Lowest Rated</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Reviews Grid Section -->
+<section class="py-xl bg-surface">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="masonry-grid">
+<!-- Review Card 1 -->
+<div class="masonry-item bg-surface-container-lowest rounded-[16px] p-md card-hover border border-surface-variant">
+<div class="flex justify-between items-start mb-md">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="bg-error-container text-on-error-container font-label-sm text-label-sm px-2 py-1 rounded-[6px]">Zomato</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-md">"Absolutely incredible! The wok hei flavor is off the charts. The Pad Kra Pao had the perfect amount of heat and the egg was crispy edged with a runny yolk. Will definitely be ordering again!"</p>
+<div class="flex items-center gap-sm border-t border-surface-variant pt-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-caps text-label-caps">JD</div>
+<div>
+<div class="font-body-md text-body-md font-bold">John Doe</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">2 days ago</div>
+</div>
+</div>
+</div>
+<!-- Review Card 2 -->
+<div class="masonry-item bg-surface-container-lowest rounded-[16px] p-md card-hover border border-surface-variant">
+<div class="flex justify-between items-start mb-md">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<span class="bg-surface-container text-on-surface font-label-sm text-label-sm px-2 py-1 rounded-[6px]">Google</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-md">"Great packaging and portions. The Dan Dan noodles were rich and savory. Only giving 4 stars because delivery took a bit longer than expected on a Friday night, but the food stayed hot."</p>
+<div class="flex items-center gap-sm border-t border-surface-variant pt-sm">
+<div class="w-8 h-8 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-label-caps text-label-caps">SM</div>
+<div>
+<div class="font-body-md text-body-md font-bold">Sarah M.</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">1 week ago</div>
+</div>
+</div>
+</div>
+<!-- Review Card 3 -->
+<div class="masonry-item bg-surface-container-lowest rounded-[16px] p-md card-hover border border-surface-variant">
+<div class="flex justify-between items-start mb-md">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2 py-1 rounded-[6px]">Swiggy</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-md">"Best Asian street food in the city. You can literally taste the fire from the wok. Highly recommend the spicy basil chicken!"</p>
+<div class="flex items-center gap-sm border-t border-surface-variant pt-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-caps text-label-caps">AK</div>
+<div>
+<div class="font-body-md text-body-md font-bold">Alex K.</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">2 weeks ago</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Component -->
+<footer class="w-full py-xl bg-inverse-surface dark:bg-surface-container-lowest">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-lg px-margin-desktop">
+<div>
+<div class="font-headline-lg text-headline-lg text-primary-fixed dark:text-primary mb-md">
+                    Woking's
+                </div>
+<p class="font-body-md text-body-md text-inverse-on-surface/80">
+                    © 2024 Woking's. Wok-fired. Soul-satisfied.
+                </p>
+</div>
+<div class="flex flex-col gap-sm">
+<a class="font-body-md text-body-md text-inverse-on-surface/80 hover:text-primary-fixed hover:text-primary-fixed transition-colors duration-200 hover:translate-x-1 transition-transform duration-200" href="#">Menu</a>
+<a class="font-body-md text-body-md text-inverse-on-surface/80 hover:text-primary-fixed hover:text-primary-fixed transition-colors duration-200 hover:translate-x-1 transition-transform duration-200" href="#">Locations</a>
+<a class="font-body-md text-body-md text-inverse-on-surface/80 hover:text-primary-fixed hover:text-primary-fixed transition-colors duration-200 hover:translate-x-1 transition-transform duration-200" href="#">Our Story</a>
+</div>
+<div class="flex flex-col gap-sm">
+<a class="font-body-md text-body-md text-inverse-on-surface/80 hover:text-primary-fixed hover:text-primary-fixed transition-colors duration-200 hover:translate-x-1 transition-transform duration-200" href="#">Careers</a>
+<a class="font-body-md text-body-md text-inverse-on-surface/80 hover:text-primary-fixed hover:text-primary-fixed transition-colors duration-200 hover:translate-x-1 transition-transform duration-200" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>
